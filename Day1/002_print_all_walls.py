@@ -1,7 +1,7 @@
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
 
 doc = __revit__.ActiveUIDocument.Document
-app = __revit__app = __revit__.Application
+app =  __revit__.Application
 
 walls = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Walls).WhereElementIsNotElementType().ToElements()
 

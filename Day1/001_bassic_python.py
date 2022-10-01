@@ -40,11 +40,14 @@ List มีส่วนสำคัญอย่างมากในการท
 เป็น Data Type หลักของการทำงาน 
 """
 
-data = ['ข้อมูล', ['ห้องน้ำ', 3, 2.4, False], ['ห้องนอน', 35, 2.7, True]]
+data = [
+    'ข้อมูล', 
+    ['ห้องน้ำ', 3, 2.4, False], 
+    ['ห้องนอน', 35, 2.7, True]
+    ]
 """
 List สามารถอยู่ใน List ได้ และสามารถผสมข้อมูลหลายประเภทใน List เดียวกันได้
 """
-
 print(data[1])
 print(data[1][0])  ## การใช้ Index เลือกข้อมูลที่ซ้อนกันอยู่
 
@@ -82,6 +85,9 @@ dict_data = {
 }
 
 print(dict_data)
+print(dict_data['rooms'])
+print(dict_data['rooms'][0])
+
 
 dict_data['rooms'].append(
     {
@@ -133,7 +139,8 @@ else:
 """
 if dict_data['rooms'][1]['ceiling_height'] < 2.7:
     print('ฝ้าเพดานต่ำเกินไป')
-
+else:
+    print("ฝ้าเพดานสูงพอดี")
 
 ### Conditions ###
 
@@ -179,6 +186,11 @@ for room in dict_data['rooms']:
 !!! Exercise 4 !!!
 นับจำนวนห้องใน dict_data['rooms'] ที่มีความสูงฝ้าเพดานต่ำกว่า 3 เมตร
 """
+room_count = 0
+for room in dict_data['rooms']:
+    if room['ceiling_height'] < 3:
+        room_count += 1
+print(room_count)
 
 ### --------------- ###
 """
