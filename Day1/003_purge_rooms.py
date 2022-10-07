@@ -1,3 +1,13 @@
+# -*- coding: utf-8 -*-
+
+
+# highlight as new
+__highlight__ = 'new'
+__author__ = 'maipatana'
+
+__title__ = 'Purge Room'
+__doc__ = 'This is the text for the button tooltip associated with this script.'
+
 from Autodesk.Revit.UI import TaskDialog, TaskDialogCommandLinkId, TaskDialogCommonButtons, TaskDialogResult
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, Transaction
 

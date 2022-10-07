@@ -1,9 +1,15 @@
-from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
+from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, UnitUtils
 
 doc = __revit__.ActiveUIDocument.Document
 app =  __revit__.Application
 
-walls = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Walls).WhereElementIsNotElementType().ToElements()
+walls = FilteredElementCollector(doc)\
+.OfCategory(BuiltInCategory.OST_Walls)\
+.WhereElementIsNotElementType()\
+.ToElements()
+
+
+
 
 for wall in walls:
     print('--------')
@@ -25,4 +31,5 @@ for wall in walls:
         wall_types[name] = wall.GetParameters('Length')[0].AsDouble()  ## ให้เพิ่ม Key:Value เข้าไปใน wall_types
 
 for name in wall_types.keys():
-    print("{} ยาว {} เมตร".format(name, wall_types[name]))
+    length = UnitUtils.ConvertFromInternalUnits(wall_types[name], DisplayUnitType.DUT_METERS)
+    print("{} ยาว {} เมตร".format(name, length))
