@@ -1,0 +1,56 @@
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:maipatnapythonforrevitworkshop"
+      mc:Ignorable="d" 
+      d:DesignHeight="450"
+      Background="White"
+      Title="DockingPane" Width="300">
+    <StackPanel Grid.Row="1" Grid.Column="0">
+        <TextBlock>Maipatana Dockable Panel</TextBlock>
+        <Image Height="80"></Image>
+        <Expander Grid.Column="0" Header="Manual" Grid.Row="1">
+            <Grid Background="#FFE5E5E5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column='0'>
+                    <Label>Manaul</Label>
+                    <Label>Templates</Label>
+                </StackPanel>
+                <StackPanel Grid.Column='1'>
+                    <Label>
+                    <Hyperlink Click="open_dummy_link">Open Google</Hyperlink>
+                    </Label>
+                    <Label>Link</Label>
+                </StackPanel>
+            </Grid>
+        </Expander>
+        <Expander Grid.Column="0" Header="Standard Revit Models" Grid.Row="1">
+            <Grid Background="#FFE5E5E5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column='0'>
+                    <Button Click="do_something">Do something</Button>
+                    
+                </StackPanel>
+                <StackPanel Grid.Column='1'>
+                    <Label></Label>
+                    <Label></Label>
+                </StackPanel>
+            </Grid>
+        </Expander>
+    </StackPanel>
+</Page>

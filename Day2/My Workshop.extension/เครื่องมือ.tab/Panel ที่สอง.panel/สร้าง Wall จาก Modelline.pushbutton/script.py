@@ -1,4 +1,19 @@
+# -*- coding: utf-8 -*-
 
+# highlight as new
+__highlight__ = 'new'
+__author__ = 'maipatana'
+
+#__title__ = 'xxxx'
+__doc__ = """เลือก Modelline แล้วสร้างผนังบนเส้นเหล่านั้น
+เครื่องมือจะทำการลบเส้น Modelline เมื่อเสร็จสิ้น"""
+
+__context__ = "Lines"
+
+from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, UnitUtils, DisplayUnitType, Transaction, Wall
+
+doc = __revit__.ActiveUIDocument.Document
+uidoc = __revit__.ActiveUIDocument
 
 def changefrommeter(number):
     ### ถ้าเป็น Version 2021+

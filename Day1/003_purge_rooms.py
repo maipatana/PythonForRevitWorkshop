@@ -2,7 +2,7 @@
 
 
 # highlight as new
-__highlight__ = 'new'
+__highlight__ = 'updated'
 __author__ = 'maipatana'
 
 __title__ = 'Purge Room'
