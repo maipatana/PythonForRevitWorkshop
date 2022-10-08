@@ -19,6 +19,7 @@ materials = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Materia
 t = Transaction(doc)
 t.Start("Create Material")
 
+## ถ้ามีชื่อ Material นี้อยู่แล้ว ให้ return ที่มีอยู่แล้ว ถ้ายัง ให้สร้างใหม่และ return ElementId ของ Material ที่สร้างใหม่
 def get_existed_mat(name):
     for mat in materials:
         if mat.Name == name:
@@ -26,8 +27,8 @@ def get_existed_mat(name):
     return Material.Create(doc, name)
 
 for name, color in zip(MATERIAL_NAMES, MATERIAL_COLORS):
-    new_matId = get_existed_mat(name)
-    new_mat = doc.GetElement(new_matId)
-    new_mat.Color = Color(color[0], color[1], color[2])
+    new_matId = get_existed_mat(name)  ## สร้าง Materal
+    new_mat = doc.GetElement(new_matId)  ## ดึงเอา Material Elemet นั้นๆออกมา
+    new_mat.Color = Color(color[0], color[1], color[2])  ## กำหนด ค่า Shading สี
 
 t.Commit()

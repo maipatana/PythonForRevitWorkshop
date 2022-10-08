@@ -26,7 +26,8 @@ t = Transaction(doc, 'Create Path Of Travel between Doors')
 t.Start()
 for door_start in doors:
     for door_end in doors:
-        if door_start.Id != door_end.Id:
+        if door_start.Id != door_end.Id: ## ถ้าประตูไม่ใช่ตัวเอง
+            ## สร้าง PathOfTravel
             path= Analysis.PathOfTravel.Create(doc.ActiveView, door_start.Location.Point, door_end.Location.Point)
             print(changetometer(path.GetParameters('Length')[0].AsDouble()))
             doc.Delete(path.Id)

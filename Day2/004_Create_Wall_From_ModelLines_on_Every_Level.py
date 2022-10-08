@@ -29,7 +29,9 @@ t = Transaction(doc, 'สร้างผนังจากเส้น Model Lin
 t.Start()
 
 for i in lines:
-    for level in levels:
+    for level in levels:  ## Loop ทุกๆ Level
+        ## สร้าง Wall จาก Curve อ่าน doc ที่ https://www.revitapidocs.com/2021.1/0ce4c555-4cee-f5fd-2e84-43cacf34ac5c.htm
         Wall.Create(doc, i.Location.Curve, wt, level.Id, changefrommeter(3), 0, False, False)
+    ## ลบเส้น modelline ทิ้ง
     doc.Delete(i.Id)
 t.Commit()

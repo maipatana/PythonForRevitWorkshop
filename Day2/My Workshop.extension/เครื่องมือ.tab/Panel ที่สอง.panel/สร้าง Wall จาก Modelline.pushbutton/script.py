@@ -31,6 +31,8 @@ lines = [doc.GetElement(i) for i in uidoc.Selection.GetElementIds()]
 t = Transaction(doc, 'สร้างผนังจากเส้น Model Line')
 t.Start()
 for i in lines:
+    ## สร้าง Wall จาก Curve อ่าน doc ที่ https://www.revitapidocs.com/2021.1/0ce4c555-4cee-f5fd-2e84-43cacf34ac5c.htm
     Wall.Create(doc, i.Location.Curve, wt, l, changefrommeter(3), 0, False, False)
+    ## ลบเส้น modelline ทิ้ง
     doc.Delete(i.Id)
 t.Commit()

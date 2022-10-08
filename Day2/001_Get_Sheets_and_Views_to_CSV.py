@@ -13,6 +13,7 @@ doc = __revit__.ActiveUIDocument.Document
 
 FILE_LOCATION = "C:\\Users\\User\\Downloads\\"  ## ใช้ไฟล์ Path ของตัวเอง
 
+## เอา Sheets ทั้งหมดมา
 sheets = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Sheets).WhereElementIsNotElementType().ToElements()
 
 """
@@ -21,8 +22,8 @@ r - อ่านไฟล์
 a - เพิ่มเข้าไปในไฟล์
 """
 with open(FILE_LOCATION + "sheets.csv", "w") as wFile:
-    head = "Number, Name"
-    wFile.write(head)
+    head = "Number, Name\n"  ## กำหนดเอาไว้สำหรับบรรทัดแรก
+    wFile.write(head)  ## เขียนลงไปในไฟล์
     for sheet in sheets:
         data = "{}, {} \n".format(sheet.LookupParameter('Sheet Number').AsString(), sheet.LookupParameter('Sheet Name').AsString())
         wFile.write(data.encode("utf-8"))
