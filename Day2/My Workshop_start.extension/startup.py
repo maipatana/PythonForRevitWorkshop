@@ -18,7 +18,7 @@ forms.toast(
     appid="maipatana",
     click="https://eirannejad.github.io/pyRevit/",
     actions={
-        "Open Maipatana":"https://facebook.com/maipatanapage",
+        "Open Google":"https://google.com",
         "Open Toast64":"https://github.com/go-toast/toast"
         })
 

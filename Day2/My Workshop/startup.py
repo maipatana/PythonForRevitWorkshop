@@ -18,29 +18,29 @@ forms.toast(
     appid="maipatana",
     click="https://eirannejad.github.io/pyRevit/",
     actions={
-        "Open Maipatana":"https://facebook.com/maipatanapage",
+        "Open Google":"https://google.com",
         "Open Toast64":"https://github.com/go-toast/toast"
         })
 
-# class DockableExample(Windows.Controls.Page):
-#     def __init__(self, xaml_file):
-#         wpf.LoadComponent(self, op.join(op.dirname(__file__), xaml_file))
+class DockableExample(Windows.Controls.Page):
+    def __init__(self, xaml_file):
+        wpf.LoadComponent(self, op.join(op.dirname(__file__), xaml_file))
         
-#     def do_something(self, sender, args):
-#         forms.alert("ใกล้จะจบ Workshop แล้วละ อดทนอีกนิดนะ")
+    def do_something(self, sender, args):
+        forms.alert("ใกล้จะจบ Workshop แล้วละ อดทนอีกนิดนะ")
 
-#     def open_dummy_link(self,sender,args):
-#         script.open_url("https://google.com")
+    def open_dummy_link(self,sender,args):
+        script.open_url("https://google.com")
 
-# class DockableExamplePanelProvider (UI.IDockablePaneProvider):
-#     def SetupDockablePane(self, data):
-#         data.FrameworkElement = DockableExample("DockableExample.xaml")
-#         data.VisibleByDefault = True
+class DockableExamplePanelProvider (UI.IDockablePaneProvider):
+    def SetupDockablePane(self, data):
+        data.FrameworkElement = DockableExample("DockableExample.xaml")
+        data.VisibleByDefault = True
 
 
-# DOCKABLE_PANE_ID = UI.DockablePaneId(Guid.NewGuid())
-# HOST_APP.uiapp.RegisterDockablePane(
-#     DOCKABLE_PANE_ID,
-#     "Maipatana Workshop",
-#     DockableExamplePanelProvider()
-# )
+DOCKABLE_PANE_ID = UI.DockablePaneId(Guid.NewGuid())
+HOST_APP.uiapp.RegisterDockablePane(
+    DOCKABLE_PANE_ID,
+    "Maipatana Workshop",
+    DockableExamplePanelProvider()
+)
