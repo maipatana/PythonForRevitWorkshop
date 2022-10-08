@@ -64,7 +64,8 @@ with open('building_programs.csv', 'r') as rFile:  ## เปิดไฟล์�
                 new_box.LookupParameter('Width').Set(changefrommeter(width))  ## กำหนด Parameter
                 new_box.LookupParameter('Length').Set(changefrommeter(length))  ## กำหนด Parameter
                 new_box.LookupParameter('Height').Set(changefrommeter(height))  ## กำหนด Parameter
-                new_box.LookupParameter('Material').Set(GetMaterialId(color))  ## กำหนด Parameter
+                if GetMaterialId(color):
+                    new_box.LookupParameter('Material').Set(GetMaterialId(color))  ## กำหนด Parameter
             x += changefrommeter(5)  ## เว้นระยะแกน x เพิ่ม
 
 t.Commit()
