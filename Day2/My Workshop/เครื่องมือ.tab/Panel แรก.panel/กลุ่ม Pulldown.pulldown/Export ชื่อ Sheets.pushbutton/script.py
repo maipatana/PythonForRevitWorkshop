@@ -4,7 +4,7 @@
 __highlight__ = 'new'
 __author__ = 'maipatana'
 
-__title__ = 'xxxx'
+#__title__ = 'xxxx'
 __doc__ = 'This is the text for the button tooltip associated with this script.'
 
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
