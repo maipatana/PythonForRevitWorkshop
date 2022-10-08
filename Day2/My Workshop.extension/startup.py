@@ -13,8 +13,8 @@ from pyrevit.coreutils import Guid
 import os.path as op
 
 forms.toast(
-    "ยินดีต้อนรับสู่ Python for Revit Workshop",
-    title="ยินดีต้อนรับสู่ Python for Revit Workshop",
+    "Welcome to Python for Revit Workshop",
+    title="Welcome to Python for Revit Workshop",
     appid="maipatana",
     click="https://eirannejad.github.io/pyRevit/",
     actions={
