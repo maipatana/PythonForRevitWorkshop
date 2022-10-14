@@ -10,7 +10,11 @@ __doc__ = """เลือก Modelline แล้วสร้างผนัง�
 
 __context__ = "Lines"
 
-from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, UnitUtils, DisplayUnitType, Transaction, Wall
+from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, UnitUtils, Transaction, Wall
+### ถ้าเป็น Version 2021-
+from Autodesk.Revit.DB import DisplayUnitType
+### ถ้าเป็น Version 2021+
+### from Autodesk.Revit.DB import UnitTypeId
 
 doc = __revit__.ActiveUIDocument.Document
 uidoc = __revit__.ActiveUIDocument
@@ -31,5 +35,6 @@ lines = [doc.GetElement(i) for i in uidoc.Selection.GetElementIds()]
 t = Transaction(doc, 'สร้างผนังจากเส้น Model Line')
 t.Start()
 for i in lines:
+    ### เริ่มเขียน code ตรงนี้
     pass
 t.Commit()

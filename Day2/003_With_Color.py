@@ -7,7 +7,11 @@ __author__ = 'maipatana'
 __title__ = 'xxxx'
 __doc__ = 'This is the text for the button tooltip associated with this script.'
 
-from Autodesk.Revit.DB import UnitUtils, DisplayUnitType, Structure, XYZ, Transaction, FilteredElementCollector, BuiltInCategory
+from Autodesk.Revit.DB import UnitUtils, Structure, XYZ, Transaction, FilteredElementCollector, BuiltInCategory
+### ถ้าเป็น Version 2021-
+from Autodesk.Revit.DB import DisplayUnitType
+### ถ้าเป็น Version 2021+
+### from Autodesk.Revit.DB import UnitTypeId
 
 doc = __revit__.ActiveUIDocument.Document
 uidoc = __revit__.ActiveUIDocument

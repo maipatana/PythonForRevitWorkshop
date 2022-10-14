@@ -1,4 +1,10 @@
+# -*- coding: utf-8 -*-
+
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, UnitUtils
+### ถ้าเป็น Version 2021-
+from Autodesk.Revit.DB import DisplayUnitType
+### ถ้าเป็น Version 2021+
+### from Autodesk.Revit.DB import UnitTypeId
 
 doc = __revit__.ActiveUIDocument.Document
 app =  __revit__.Application

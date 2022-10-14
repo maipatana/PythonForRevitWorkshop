@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 ## Import Class ที่จำเป็น
 clr.AddReference("System")
 from System.Collections.Generic import List

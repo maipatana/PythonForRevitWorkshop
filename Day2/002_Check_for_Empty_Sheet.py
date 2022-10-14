@@ -27,8 +27,8 @@ for view in views:  ## Loop ตัว View
     all_sheets_in_views.append(for_check)  ## เจอ Sheet Number กับ Name คู่กันก็ใส่ไปใน List
 
 for sheet in sheets:
-    number = sheet.LookupParameter('Sheet Number').AsString() if view.LookupParameter('Sheet Number') else None
-    name = sheet.LookupParameter('Sheet Name').AsString() if view.LookupParameter('Sheet Name') else None
+    number = sheet.LookupParameter('Sheet Number').AsString() if sheet.LookupParameter('Sheet Number') else None
+    name = sheet.LookupParameter('Sheet Name').AsString() if sheet.LookupParameter('Sheet Name') else None
     for_check = "{} {}".format(number, name)
     if for_check not in all_sheets_in_views:  ## เช็คว่าชื่อกับเลข Sheet ที่เจออยู่ใน List ที่มาจาก View ไหม
         print(for_check)

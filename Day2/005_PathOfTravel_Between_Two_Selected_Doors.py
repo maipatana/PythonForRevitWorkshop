@@ -9,7 +9,11 @@ __doc__ = 'This is the text for the button tooltip associated with this script.'
 
 __context__ = ["Doors"]
 
-from Autodesk.Revit.DB import UnitUtils, DisplayUnitType, Transaction, Analysis
+from Autodesk.Revit.DB import UnitUtils, Transaction, Analysis
+### ถ้าเป็น Version 2021-
+from Autodesk.Revit.DB import DisplayUnitType
+### ถ้าเป็น Version 2021+
+### from Autodesk.Revit.DB import UnitTypeId
 
 doc = __revit__.ActiveUIDocument.Document
 uidoc = __revit__.ActiveUIDocument
