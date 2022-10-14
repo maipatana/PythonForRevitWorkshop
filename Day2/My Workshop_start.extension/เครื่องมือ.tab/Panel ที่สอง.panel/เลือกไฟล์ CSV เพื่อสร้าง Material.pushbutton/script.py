@@ -44,5 +44,6 @@ if dialog.ShowDialog():
             t.Start("Create Material")
             lines = rFile.readlines()  ## อ่านทุกบรรทัด
             for line in lines:  ## loop แต่ละบรรทัด
+                ### เริ่มเขียน code ตรงนี้
                 pass
             t.Commit()
