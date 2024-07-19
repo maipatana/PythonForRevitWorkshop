@@ -10,10 +10,10 @@ doc = __revit__.ActiveUIDocument.Document
 app =  __revit__.Application
 uidoc = __revit__.ActiveUIDocument
 
+
 walls = FilteredElementCollector(doc)\
 .OfCategory(BuiltInCategory.OST_Walls)\
-.WhereElementIsNotElementType()\
-.ToElements()
+.WhereElementIsNotElementType().ToElements()
 
 
 
