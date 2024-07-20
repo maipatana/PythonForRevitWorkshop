@@ -27,10 +27,10 @@ mainDialog.CommonButtons = TaskDialogCommonButtons.Close
 mainDialog.DefaultButton = TaskDialogResult.Close
 tResult = mainDialog.Show()
 if TaskDialogResult.CommandLink1 == tResult:
-	### เริ่ม Transaction
-	t = Transaction(doc, 'Delete unused rooms.')
-	t.Start()
-	for i in to_delete:
-	    doc.Delete(i)
-	### จบ Transaction
-	t.Commit()
+    ### เริ่ม Transaction
+    t = Transaction(doc, 'Delete unused rooms.')
+    t.Start()
+    for i in to_delete:
+        doc.Delete(i)
+    ### จบ Transaction
+    t.Commit()
