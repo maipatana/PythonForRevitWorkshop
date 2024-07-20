@@ -33,9 +33,9 @@ for wall in walls:
     wallType = doc.GetElement(wall.GetTypeId())
     name = wallType.LookupParameter('Type Name').AsString()
     if name in wall_types.keys(): ## ถ้าชื่อ Type Name เป็น Key อยู่ใน Dictionay wall_types แล้ว
-        wall_types[name] += wall.GetParameters('Length')[0].AsDouble()  ## ให้ + ความยาวเพิ่มเข้าไป
+        wall_types[name] += wall.LookupParameter('Length').AsDouble()  ## ให้ + ความยาวเพิ่มเข้าไป
     else:  ## ถ้ายัง
-        wall_types[name] = wall.GetParameters('Length')[0].AsDouble()  ## ให้เพิ่ม Key:Value เข้าไปใน wall_types
+        wall_types[name] = wall.LookupParameter('Length').AsDouble()  ## ให้เพิ่ม Key:Value เข้าไปใน wall_types
 
 for name in wall_types.keys():
     ### ถ้าเป็น Version 2021+

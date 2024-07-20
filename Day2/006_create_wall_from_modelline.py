@@ -1,4 +1,14 @@
+# -*- coding: utf-8 -*-
 
+from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, UnitUtils, Transaction, Wall
+### ถ้าเป็น Version 2021-
+from Autodesk.Revit.DB import DisplayUnitType
+### ถ้าเป็น Version 2021+
+### from Autodesk.Revit.DB import UnitTypeId
+
+doc = __revit__.ActiveUIDocument.Document
+app =  __revit__.Application
+uidoc = __revit__.ActiveUIDocument
 
 def changefrommeter(number):
     ### ถ้าเป็น Version 2021+

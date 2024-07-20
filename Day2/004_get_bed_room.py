@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ## Import Class ที่จำเป็น
+import clr
 clr.AddReference("System")
 from System.Collections.Generic import List
 
@@ -13,16 +14,21 @@ DisplayUnitType
 )
 
 doc = __revit__.ActiveUIDocument.Document
+app =  __revit__.Application
+uidoc = __revit__.ActiveUIDocument
+
 ## Filter หาก Room ทั้งหมดใน View
 rooms = FilteredElementCollector(doc,doc.ActiveView.Id)\
 .OfCategory(BuiltInCategory.OST_Rooms)\
 .WhereElementIsNotElementType()
 
+SELECTED_NAME = "Bed Room"
+
 bedrooms = List[ElementId]() ## สร้างตัวแปรว่างที่ข้อมูลเป็น List ของ ElementId
 area = 0 ## สร้างตัวแปรชื่อ area เป็นตัวเลขมีค่า 0 
 for room in rooms:
-    if room.GetParameters('Name')[0].AsString()=='Bed Room': ## ถ้าชื่อห้องคือ Bedroom
-        area+=room.GetParameters('Area')[0].AsDouble() ## ให้ + พื้นที่เข้าไปในตัวแปรชื่อ area
+    if room.LookupParameter('Name').AsString() == SELECTED_NAME: ## ถ้าชื่อห้องคือ Bedroom
+        area+=room.LookupParameter('Area').AsDouble() ## ให้ + พื้นที่เข้าไปในตัวแปรชื่อ area
         bedrooms.Add(room.Id)
 
 area_in_sqm = UnitUtils.\
