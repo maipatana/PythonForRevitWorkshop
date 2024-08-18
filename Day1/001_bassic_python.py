@@ -172,7 +172,7 @@ for i, room in enumerate(room_names):
 enumerate จะให้ค่า index มาด้วย ซึ่งสามารถนำไปใช้เป็น index ของ List ได้
 """
 
-for i in range(len(room)):
+for i in range(len(room_names)):
     print(room_names[i], areas[i])
 """
 len(<List>) จะให้จำนวน item ใน List ซึ่งสามารถนำไปผนวกกับ range() และสามารถใช้ i เป็น index ของ List ได้
